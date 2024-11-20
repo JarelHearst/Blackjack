@@ -1,0 +1,63 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jarel\\source\\repos\\Blackjack\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D053CE46-170B-4B2C-AB18-38634BE295FB}|Blackjack.pyproj|C:\\Users\\Jarel\\source\\repos\\Blackjack\\Blackjack.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D053CE46-170B-4B2C-AB18-38634BE295FB}|Blackjack.pyproj|solutionrelative:Blackjack.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 243,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Blackjack.py",
+              "DocumentMoniker": "C:\\Users\\Jarel\\source\\repos\\Blackjack\\Blackjack.py",
+              "RelativeDocumentMoniker": "Blackjack.py",
+              "ToolTip": "C:\\Users\\Jarel\\source\\repos\\Blackjack\\Blackjack.py",
+              "RelativeToolTip": "Blackjack.py",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAgwH0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-11-17T22:49:17.456Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 149,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
