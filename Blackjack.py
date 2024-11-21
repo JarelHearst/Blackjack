@@ -1,5 +1,6 @@
 import random
-
+#Todo: Track wins and losses
+#Todo: Add more than just the player and the dealer, max 4 people playing in total(player, 2 AIs, and dealer?
 
 class Card:
     def __init__(self, suit, rank):
@@ -87,6 +88,8 @@ class Hand:
 
 class Game:
     def Play(self):
+        self.player_wins = 0
+        self.dealer_wins = 0
         keep_playing = True
         while keep_playing:
             deck = Deck()
@@ -137,6 +140,8 @@ class Game:
             print("Dealer's hand: ", dealer_hand_value)
             self.check_winner(player_hand, dealer_hand, True)
 
+            print(f"\nScore: Player Wins: {self.player_wins}, Dealer Wins: {self.dealer_wins}")
+
             response = input("\nWould you like to keep playing? (Y/N)").lower()
             if response in ["yes", "y"]:
                 keep_playing = True
@@ -148,25 +153,31 @@ class Game:
         if game_over:
             if player_hand.get_value() > 21:
                 print("You busted. Dealer wins! :(")
+                self.dealer_wins += 1
                 return True
             elif player_hand.is_blackjack():
                 print("You have blackjack! You win! :)")
+                self.player_wins += 1
                 return True
             elif dealer_hand.get_value() > 21:
                 print("Dealer busted. You win! :)")
+                self.player_wins += 1
                 return True
             elif dealer_hand.is_blackjack():
                 print("Dealer has blackjack! Dealer wins! :(")
+                self.dealer_wins += 1
                 return True
             elif player_hand.is_blackjack() and dealer_hand.is_blackjack():
                 print("Both players win! It's a draw!")
                 return True
             elif player_hand.get_value() > dealer_hand.get_value():
                 print("You Win! :)")
+                self.player_wins += 1
             elif player_hand.get_value() == dealer_hand.get_value():
                 print("It's a draw!")
             else:
                 print("Dealer wins. :(")
+                self.dealer_wins += 1
             return True
         return False
  
