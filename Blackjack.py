@@ -14,7 +14,7 @@ class Deck:
         self.cards = []
         suits = ["spades", "clubs", "hearts", "diamonds"]
         ranks = [
-             {"rank": "A", "value": 11}, 
+             {"rank": "A", "value": 11},
              {"rank": "2", "value": 2}, 
              {"rank": "3", "value": 3}, 
              {"rank": "4", "value": 4}, 
@@ -87,18 +87,8 @@ class Hand:
 
 class Game:
     def Play(self):
-        game_number = 0
-        games_to_play = 0
-
-        while games_to_play <= 0:
-            try:
-                games_to_play = int(input("How many games do you want to play? "))
-            except:
-                print("You must enter a number.")
-        
-        while game_number < games_to_play:
-            game_number += 1
-
+        keep_playing = True
+        while keep_playing:
             deck = Deck()
             deck.shuffle()
 
@@ -110,8 +100,6 @@ class Game:
                 dealer_hand.add_card(deck.deal(1))
 
             print()
-            print("*" * 30)
-            print(f"Game {game_number} of {games_to_play}")
             print("*" * 30)
             player_hand.display()
             dealer_hand.display()
@@ -143,33 +131,37 @@ class Game:
             dealer_hand.display(show_all_dealer_cards=True)
             if self.check_winner(player_hand, dealer_hand):
                     continue
-
+          
             print("Final Results")
             print("Your hand: ", player_hand_value)
             print("Dealer's hand: ", dealer_hand_value)
-        
             self.check_winner(player_hand, dealer_hand, True)
-       
-            print("\nThanks for playing!") 
+
+            response = input("\nWould you like to keep playing? (Y/N)").lower()
+            if response in ["yes", "y"]:
+                keep_playing = True
+            elif response in ["no", "n"]:
+                print("\nThanks for playing!")
+                keep_playing = False
+
     def check_winner(self, player_hand, dealer_hand, game_over = False):
-        if not game_over:
+        if game_over:
             if player_hand.get_value() > 21:
                 print("You busted. Dealer wins! :(")
+                return True
+            elif player_hand.is_blackjack():
+                print("You have blackjack! You win! :)")
                 return True
             elif dealer_hand.get_value() > 21:
                 print("Dealer busted. You win! :)")
                 return True
-            elif player_hand.is_blackjack() and dealer_hand.is_blackjack():
-                print("Both players win! It's a draw!")
-                return True
-            elif player_hand.is_blackjack():
-                print("You has blackjack! You win! :)")
-                return True
             elif dealer_hand.is_blackjack():
                 print("Dealer has blackjack! Dealer wins! :(")
                 return True
-        else:
-            if player_hand.get_value() > dealer_hand.get_value():
+            elif player_hand.is_blackjack() and dealer_hand.is_blackjack():
+                print("Both players win! It's a draw!")
+                return True
+            elif player_hand.get_value() > dealer_hand.get_value():
                 print("You Win! :)")
             elif player_hand.get_value() == dealer_hand.get_value():
                 print("It's a draw!")
